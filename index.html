@@ -1,0 +1,44 @@
+<html lang='en'>
+
+<head>
+  <title>Image Processing Project</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+  <link rel='stylesheet' href='css/styles.css'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Just+Another+Hand&display=swap'>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+  <script type="text/javascript" src="drawing.js"></script>
+  <script type="text/javascript" src="vendor/opencv.js"></script>
+  <script type="text/javascript" src="processing.js"></script>
+  <script type="text/javascript" src="logic.js"></script>
+</head>
+
+<body>
+
+  <div class='container'>
+
+    <h1 id='title'>Math Quiz</h1>
+    <h2 id='question'><span id='n1'>3</span> + <span id='n2'>2</span> = </h2>
+
+    <canvas id='canvas' width="150" height="150"></canvas>
+
+  </div>
+
+  <div class='container'>
+    <button id='checkAnswer' class='btn' value='Check'>Check Answer!</button>
+  </div>
+
+  <script type="text/javascript">
+    loadModel();
+    prepareCanvas();
+    nextQuestion();
+
+    document.getElementById('checkAnswer').addEventListener('click', function() {
+      checkAnswer();
+      clearCanvas();
+      nextQuestion();
+    });
+  </script>
+
+</body>
+
+</html>
